@@ -13,6 +13,7 @@ object pepita {
 		energia = energia + comida.energiaQueOtorga()
 	}
 	
+	//2
 	method estaFeliz() {
 		return 500< energia and energia < 1000
 	}
@@ -36,12 +37,12 @@ object pepita {
 		self.vola(5)
 	}
 	
-	haceLoQueQuieras(estadoDeAnimo) {
-		if(estadoDeAnimo == cansada)
+	method haceLoQueQuieras() {
+		if(self.estaCansada())
 		{
 			self.come(alpiste)
 		}
-		if(estadoDeAnimo == feliz)
+		if(self.estaFeliz())
 		{
 			self.vola(8)
 		}
@@ -118,5 +119,15 @@ object canelones{
 			energia+=7
 		}
 		return energia
+	}
+}
+
+//3
+object roque{
+	method entrenar(){
+		pepita.vola(10)
+		pepita.come(alpiste)
+		pepita.vola(5)
+		pepita.haceLoQueQuieras()
 	}
 }
